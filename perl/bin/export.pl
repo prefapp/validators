@@ -20,7 +20,7 @@ foreach my $arg (@ARGV){
 
 unless(@ARGV && $options{package_name}){
 
-    print "Usage: $0 package_name=<name> version=X.X validations_file=<path to validations.yml>\n";
+    print "Usage: $0 package_name=<name> validations_file=<path to validations.yml>\n";
     exit 1;
 }
 

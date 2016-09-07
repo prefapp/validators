@@ -4,6 +4,7 @@ use Data::Dumper;
 use strict;
 
 $Data::Dumper::Terse = 1;
+#$Data::Dumper::Ident = 1;
 
 my @TEMPLATE_VARS = qw(PACKAGE_NAME VERSION);
 
