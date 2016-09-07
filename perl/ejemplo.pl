@@ -4,7 +4,7 @@ use strict;
 
 ##$YAML::Syck::ImplicitTyping = 1;
 
-my $a = LoadFile('regexp.yml');
+my $a = LoadFile('../validations.yml');
 my $str = $ARGV[0];
 
 my $r =  $a->{smtp_user}->{regex};
@@ -22,4 +22,7 @@ if($str =~ $r_c){
     print "$1\n";
     print "$2\n";
     print "$3\n";
+}
+else{
+    print "'$str' NO matchea\n";
 }

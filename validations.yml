@@ -1,0 +1,131 @@
+---
+version: 0.1
+validations:
+  int:
+    regex: !ruby/regexp /^\d+$/
+  signed_int:
+    regex: !ruby/regexp /^[-+]?\d+$/
+  float:
+    regex: !ruby/regexp /\A[+-]?\d+\.?\d+(e[+-]?\d+)?\z/i
+  text:
+    regex: !ruby/regexp /^[@%\s\w\-]+$/i
+  multiline_text:
+    regex: !ruby/regexp /^[\w\-\_\@\s\.\,]+/i
+  word:
+    regex: !ruby/regexp /\A[\w\-]+\z/i
+  email:
+    regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  username:
+    regex: !ruby/regexp /\A[\w\-]+\z/i
+  password:
+    regex: !ruby/regexp /^.{6,64}$/
+  domain:
+    regex: !ruby/regexp /^(default|[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,}))$/
+  server_name:
+    regex: !ruby/regexp /^(localhost|([a-z0-9-]+|\*)(\.([a-z0-9-]+|\*))*(\.([a-z]{2,}|\*)))$/
+  host:
+    regex: !ruby/regexp /\A(localhost|[a-z\d\-.]+\.[a-z]+)\z/i
+  ipv4:
+    regex: !ruby/regexp /\A\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\z/
+  url:
+    regex: !ruby/regexp /^(http(s)?|ftp|ssh):\/\/(([\w\-\:]+)\@)?(([A-Za-z0-9-]+\.)*([A-Za-z0-9-]+\.[A-Za-z0-9]+))+((\/?)(([A-Za-z0-9\._\-]+)(\/){0,1}[A-Za-z0-9.-\/]*)){0,1}/
+  smtp_user:
+    regex: !ruby/regexp "/\n            ^(\n                ([\\w+\\-.]+@[a-z\\d\\-.]+\\.[a-z]+)
+      | # email\n                ([\\w\\-\\_]+)                       # username\n            )$/x"
+  revision:
+    regex: !ruby/regexp /\A[\w.\-_]+\z/
+  unix_path:
+    regex: !ruby/regexp /^[\w\s.\/\-_+%]+$/i
+  unix_command:
+    regex: !ruby/regexp /\A[\w\s.\-_+><:]+\z/i
+  tcp_port:
+    range: 1..65535
+  mysql_dbname:
+    regex: !ruby/regexp /\A[a-z0-9_]{2,63}\z/i
+  mysql_dbuser:
+    regex: !ruby/regexp /\A[a-z0-9_]{2,16}\z/i
+  mysql_dbpassword:
+    regex: !ruby/regexp /\A.{6,64}\z/i
+  db_password:
+    regex: !ruby/regexp /^.{6,64}$/i
+  postgresql_identifier:
+    regex: !ruby/regexp /\A[a-z0-9_]{2,63}\z/i
+  postgresql_extra_privileges:
+    regex: !ruby/regexp "/^\n            (\n                SUPERUSER | NOSUPERUSER
+      |\n                CREATEDB | NOCREATEDB |\n                CREATEROLE | NOCREATEROLE
+      |\n                CREATEUSER | NOCREATEUSER |\n                INHERIT | NOINHERIT
+      |\n                LOGIN | NOLOGIN |\n                CONNECTION LIMIT \\d{1,4}
+      |\n                PASSWORD .{6,64} |\n                VALID UNTIL \\d{10,16}\n\n
+      \           )$/x"
+  version:
+    regex: !ruby/regexp /\A\w+\.\w+(\.\w+)?(\.\w+)?\z/
+  package_name:
+    regex: !ruby/regexp /^[a-z0-9+-.=]+$/
+  checksum:
+    regex: !ruby/regexp /^[a-z0-9]{16,64}$/i
+  command_line_option:
+    regex: !ruby/regexp /^[\w\-\:\.\/]*$/
+  perl_module:
+    regex: !ruby/regexp /^\w+(\:\:\w+)*(\@[0-9.-_]+)?$/
+  node_module:
+    regex: !ruby/regexp /^[\w\.-]+$/
+  ruby_gem:
+    regex: !ruby/regexp /^[\w\-\.#]+$/
+  python_package:
+    regex: !ruby/regexp /^[\w\-\.#]+$/
+  socket_address:
+    regex: !ruby/regexp /^(unix|tcp|udp)?(\:\/\/)?[\/\w\.\d\:_-]+?\:?\d{0,5}$/
+  git_bundle:
+    regex: !ruby/regexp "/^\n            [\\w\\s.\\/\\-_+%]+ # unix_path\n            \\|\n
+      \           ([a-z\\-_]+\\:\\/\\/)?[a-z\\d\\-.@]+\\.[a-z\\d\\-.:]+\\/[^\\|]+  #
+      url\n            \\|\n            [\\w.\\-_]+  # revision\n            (\\|[\\w\\s.\\/\\-_+%,]+)?
+      # file list (optional)\n            $/x"
+  apache_module:
+    fixed_values:
+    - alias
+    - apreq2
+    - auth_basic
+    - auth_digest
+    - authn_file
+    - authn_core
+    - authnz_ldap
+    - auth_openid
+    - authz_default
+    - authz_groupfile
+    - authz_host
+    - authz_user
+    - autoindex
+    - cgi
+    - dav_fs
+    - dav
+    - dav_svn
+    - deflate
+    - dir
+    - env
+    - expires
+    - fcgid
+    - headers
+    - ldap
+    - log_config
+    - logio
+    - mime
+    - negotiation
+    - perl
+    - php5
+    - proxy_ajp
+    - proxy_balancer
+    - proxy_connect
+    - proxy_http
+    - proxy
+    - python
+    - rewrite
+    - setenvif
+    - ssl
+    - status
+    - wsgi
+    - xsendfile
+    - access_compat
+  iso639-1:
+    regex: !ruby/regexp /^[a-z]{2}$/i
+  ssh_public_key:
+    regex: !ruby/regexp /^[@%\s\w\/\+\-\.]+$/i
