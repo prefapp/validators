@@ -10,7 +10,7 @@ platform.
 - First you must generate the validator module
   - to perl:
 ```bash
-  perl bin/exportar.pl package_name=MyModule validations_file=<path to validatios.yml>
+  perl bin/exportar.pl package_name=ValidatorModule validations_file=<path to validatios.yml>
 ```
 
 - Then use it in your projects
