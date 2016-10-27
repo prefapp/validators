@@ -1,0 +1,14 @@
+---
+container: validator
+container_group: prefapp
+container_username: prefapp
+group_id: 1000
+homedir: /home/validators/ruby
+image: prefapp/validator_ruby
+project: validator
+project_volume: /home/validators/ruby
+user_id: 1000
+env:
+    - #GEM_PATH=/usr/lib/ruby/gems/2.2.0
+volumes: 
+    - ../validations.yml:/home/validators/validations.yml

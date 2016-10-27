@@ -5,6 +5,8 @@ and then, through exporters in diferent langs, obtain automatically the translat
 platform.
 
 ## Common usage
+
+### perl
 - First you must generate the validator module
   - to perl:
 ```bash
@@ -19,6 +21,17 @@ if(ValidatorModule->new->validate('email', $var)){
 else{
   print "KO\n";
 }
+```
+
+### ruby
+```
+validator = Validator.new
+
+if validator.validate('email', var)
+    puts "OK"
+else
+    puts "KO. error: #{validator.error}"
+end
 ```
 
 ## validation types

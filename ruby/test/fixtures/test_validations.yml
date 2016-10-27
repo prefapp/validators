@@ -1,0 +1,15 @@
+version: 1.1
+validations: 
+  tcp_port:
+    range: 1..65535
+  email:
+    regexp: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i 
+  apache_module:
+    fixed_values:
+    - alias
+    - apreq2
+    - auth_basic
+    - auth_digest
+    - wsgi
+    - xsendfile
+    - access_compat
