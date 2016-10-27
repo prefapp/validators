@@ -90,7 +90,7 @@ module Validator
 
 
 
-      @template_options["version"] = data["version"] || DEFAULT_OPTIONS[:version]
+      @template_options[:version] = data["version"] || DEFAULT_OPTIONS[:version]
 
     end
     
