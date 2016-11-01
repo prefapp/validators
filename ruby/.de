@@ -8,7 +8,9 @@ image: prefapp/validator_ruby
 project: validator
 project_volume: /home/validators/ruby
 user_id: 1000
+user: test
+group: test
 env:
-    - #GEM_PATH=/usr/lib/ruby/gems/2.2.0
+    #- GEM_PATH=/usr/lib/ruby/gems/2.2.0
 volumes: 
     - ../validations.yml:/home/validators/validations.yml

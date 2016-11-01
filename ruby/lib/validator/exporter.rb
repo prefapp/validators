@@ -130,7 +130,7 @@ module Validator
           validation = /#{validation}/ unless validation.is_a?(Regexp)
 
           unless value =~ validation
-            raise "validation of #{type} not match pattern" 
+            raise "Input value (#{value}) is not a valid \"#{type}\"" 
           end
 
         elsif validation_class == "range"
@@ -140,7 +140,7 @@ module Validator
             validation = $1.to_i..$2.to_i 
 
             unless(value =~ /^[+-]?\d+$/)
-              raise "Value #{value} not valid" 
+              raise "Input value #{value} is not valid" 
             end
             
             ## convertimos os strings a int, senon non se dan comparao
@@ -150,14 +150,14 @@ module Validator
           raise "#{validation} isn\'t Range" unless validation.is_a?(Range)
 
           unless validation.include?(value)
-            raise "Value #{value} not in range #{validation}"
+            raise "Input value #{value} not in range #{validation}"
           end
 
         elsif validation_class == "fixed_values"
           raise "#{validation} isn\'t Array" unless validation.is_a?(Array)
           
           unless validation.include?(value)
-            raise "Value #{value} not valid in fixed values list: #{validation}"
+            raise "Input value #{value} invalid. Must be one of (#{validation.join(\',\')}"
           end
         end
       rescue Exception => e
