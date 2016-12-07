@@ -147,4 +147,6 @@ validations:
     regex: /^[@%\s\w\/\+\-\.]+$/i
   sql_server_password:
     regex: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,128}$"
+  windows_path:
+    regex: "^(?:[a-zA-Z]\:|\\\\[\w\.]+\\[\w.$]+)\\(?:[\w]+\\)*\w([\w.])+$"
 
