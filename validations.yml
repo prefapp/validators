@@ -145,3 +145,6 @@ validations:
     regex: /^[a-z]{2}$/i
   ssh_public_key:
     regex: /^[@%\s\w\/\+\-\.]+$/i
+  sql_server_password:
+    regex: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,128}$"
+
