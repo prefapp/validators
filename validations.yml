@@ -146,7 +146,9 @@ validations:
   ssh_public_key:
     regex: /^[@%\s\w\/\+\-\.]+$/i
   sql_server_password:
-    regex: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,128}$"
+    regex: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,128}$/
   windows_path:
-    regex: "^(?:[a-zA-Z]\:|\\\\[\w\.]+\\[\w.$]+)\\(?:[\w]+\\)*\w([\w.])+$"
-
+    regex: /^[a-zA-Z]:\\\\(((?![<>:"\/\\|?*]).)+((?<![ .])\\\\)?)*$/
+  windows_file:
+    #regex: /^(?!^(PRN|AUX|CLOCK\$|NUL|CON|COM\d|LPT\d|\..*)(\..+)?$)[^\x00-\x1f\\?*:\";|/]+$/
+    regex: /^[\w,\s-]+\.[A-Za-z]{3}$/
