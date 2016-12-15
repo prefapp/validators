@@ -1,5 +1,5 @@
 ---
-version: 0.2
+version: 0.208
 validations:
   int:
     regex: /^\d+$/
@@ -8,9 +8,9 @@ validations:
   float:
     regex: /\A[+-]?\d+\.?\d+(e[+-]?\d+)?\z/i
   text:
-    regex: /^[@%\s\w\-]+$/i
+    regex: /^[@%\s\w\-\.]+$/i
   multiline_text:
-    regex: /^[\w\-\_\@\s\.\,]+/i
+    regex: /^[\w\-\_\@\s\.\,\r\n]+$/mi
   word:
     regex: /\A[\w\-]+\z/i
   email:
